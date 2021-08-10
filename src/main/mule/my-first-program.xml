@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="898adcb0-f067-4f0b-a6cf-b874301143a1" >
+		<http:listener-connection host="0.0.0.0" port="${http.port}" />
+	</http:listener-config>
+	<configuration-properties doc:name="Configuration properties" doc:id="32d4ef66-c17b-4998-9ab5-0b1fe1050cc8" file="global.properties" />
+	<flow name="my-first-programFlow" doc:id="81a40a15-a7d3-47c9-85e0-5b956e1922b0" >
+		<http:listener doc:name="Listener" doc:id="bc61fa38-fb05-4e70-a8e2-e2bced584b10" config-ref="HTTP_Listener_config" path="/first-program"/>
+		<logger level="INFO" doc:name="Logger" doc:id="134c0e58-1e02-4d2f-8c24-afb55c03969e" message="Received request for first program "/>
+		<set-payload value='#[%dw 2.0&#10;output application/json&#10;---&#10;{&#10;	&#10;	"flow" : "my-first-program",&#10;	"requestTime" : now() &#10;}]' doc:name="Set Payload" doc:id="35bb375b-0fa0-4b82-861c-fa570e750b99" />
+	</flow>
+</mule>
