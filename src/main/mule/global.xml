@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+	<import doc:name="Import" doc:id="90a86b28-a3e4-46c0-b6b1-6d663ececee8" file="common-component.xml" />
+	<import doc:name="Import" doc:id="b1e95f64-2197-4a70-b5d4-16b4cc6dc62e" file="common-exception-handling.xml" />
+</mule>

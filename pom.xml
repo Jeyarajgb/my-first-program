@@ -7,14 +7,11 @@
 	<version>1.0.0</version>
 	<packaging>mule-application</packaging>
 	<name>my-first-program</name>
-	
 	<parent>
-      <groupId>com.xebia</groupId>
-      <artifactId>master-project</artifactId>
-	  <version>1.0.0-SNAPSHOT</version>
-      <relativePath/>
-    </parent> 
-
+		<groupId>com.xebia</groupId>
+		<artifactId>master-project</artifactId>
+		<version>1.0.0</version>
+	</parent>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -38,7 +35,6 @@
 		</plugins>
 	</build>
 
-	
 	<repositories>
 		<repository>
 			<id>anypoint-exchange-v2</id>
@@ -66,4 +62,12 @@
 		</pluginRepository>
 	</pluginRepositories>
 
+	<dependencies>
+		<dependency>
+			<groupId>org.mule.modules</groupId>
+			<artifactId>mule-apikit-module</artifactId>
+			<version>1.5.1</version>
+			<classifier>mule-plugin</classifier>
+		</dependency>
+	</dependencies>
 </project>
