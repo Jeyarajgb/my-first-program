@@ -20,6 +20,8 @@ pipeline {
     
       steps{
       
+        echo "selected branch: ${Branch}" 
+      
         bat "mvn clean package install"
       }
     }
