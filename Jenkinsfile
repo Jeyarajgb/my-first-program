@@ -22,7 +22,7 @@ pipeline {
       
         echo "selected branch: ${Branch}" 
       
-        bat "mvn clean package install"
+      //  bat "mvn clean package install"
       }
     }
     
