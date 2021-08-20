@@ -41,7 +41,19 @@ pipeline {
     
       steps{
       
-        echo "Selected, Build_Deploy" 
+        steps {
+        
+        echo "mule version ${params.MuleVersion}"
+        echo "environment ${params.Environment}"
+        echo "business group ${params.Business_Domain}"
+        echo "objectStoreV2 ${params.objectStoreV2}"
+        echo "Application Name ${params.Application_Name}"
+        echo "Workers Size ${params.WorkersSize}"
+        echo "userid ${cloudhub_USR}"
+        echo "pwd ${cloudhub_PSW}"
+        
+        bat "mvn package mule:deploy -Dmule.version=${params.MuleVersion} -Dcloudhub.application.name=${params.Application_Name} -Dcloudhub.env=${params.Environment} -Dcloudhub.works.size=${params.WorkersSize} -Dcloudhub.region=${region} -Dcloudhub.worker.type=${workerType} -Dcloudhub.username=${cloudhub_USR} -Dcloudhub.password=${cloudhub_PSW}"
+     }
        
       }
     }
