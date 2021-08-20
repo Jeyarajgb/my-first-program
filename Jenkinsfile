@@ -40,9 +40,6 @@ pipeline {
      }
     
       steps{
-      
-        steps {
-        
         echo "mule version ${params.MuleVersion}"
         echo "environment ${params.Environment}"
         echo "business group ${params.Business_Domain}"
@@ -54,8 +51,6 @@ pipeline {
         
         bat "mvn package mule:deploy -Dmule.version=${params.MuleVersion} -Dcloudhub.application.name=${params.Application_Name} -Dcloudhub.env=${params.Environment} -Dcloudhub.works.size=${params.WorkersSize} -Dcloudhub.region=${region} -Dcloudhub.worker.type=${workerType} -Dcloudhub.username=${cloudhub_USR} -Dcloudhub.password=${cloudhub_PSW}"
      }
-       
-      }
     }
     
   }
